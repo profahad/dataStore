@@ -26,7 +26,7 @@ class DataHandler(private val context: Context) {
     // refer to the data store and using edit
     // we can store values using the keys
     fun storeUser(age: Int, name: String) {
-        CoroutineScope(context.).launch {
+        GlobalScope.launch {
             dataStore.edit {
                 it[USER_AGE_KEY] = age
                 it[USER_NAME_KEY] = name
